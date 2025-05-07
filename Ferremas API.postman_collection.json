@@ -12,6 +12,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Sucursal sur\",\r\n  \"direccion\": \"Calle 123, Ciudad\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:8080/sucursales",
 					"protocol": "http",
@@ -30,7 +39,18 @@
 			"name": "sucursales",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sucursales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sucursales"
+					]
+				}
 			},
 			"response": []
 		},
@@ -38,7 +58,20 @@
 			"name": "sucursales/{id}/productos",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sucursales/1/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sucursales",
+						"1",
+						"productos"
+					]
+				}
 			},
 			"response": []
 		},
@@ -49,7 +82,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"nombre\": \"Taladro\",\r\n  \"categoria\": \"herramientas\",\r\n  \"precio\": 75.99,\r\n  \"stock\": 20,\r\n  \"sucursal\": \"Sucursal Centro\"\r\n}\r\n",
+					"raw": "{\r\n  \"nombre\": \"Martillo\",\r\n  \"categoria\": \"herramientas\",\r\n  \"precio\": 45.99,\r\n  \"stock\": 30,\r\n  \"sucursales\": [\r\n    { \"id\": 1 }\r\n  ]\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -76,31 +109,6 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/productos?categoria=cosas",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"productos"
-					],
-					"query": [
-						{
-							"key": "categoria",
-							"value": "cosas"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "productos/{id}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
 					"raw": "http://localhost:8080/productos",
 					"protocol": "http",
 					"host": [
@@ -117,11 +125,31 @@
 		{
 			"name": "productos/{id}",
 			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productos/{id}",
+			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"nombre\": \"Taladro de percusión\",\r\n  \"categoria\": \"herramientas\",\r\n  \"precio\": 89.99,\r\n  \"stock\": 15,\r\n  \"sucursal\": \"Sucursal Norte\"\r\n}\r\n",
+					"raw": "{\r\n  \"nombre\": \"Martillo reforzado\",\r\n  \"categoria\": \"herramientas\",\r\n  \"precio\": 49.99,\r\n  \"stock\": 25,\r\n  \"sucursales\": [\r\n    { \"id\": 1 }\r\n  ]\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
